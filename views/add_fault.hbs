@@ -1,0 +1,45 @@
+{{#extends "base"}}
+  {{#block "content"}}
+    <form method="POST">
+      <div>
+        <label form-class="label">
+          Title
+        </label>
+        <input type="text" name="title" class="form-control" />
+      </div>
+      <div>
+        <label form class="label">
+          Location
+        </label>
+        <input type="text" name="location" class="form-control" />
+      </div>
+      <div>
+        <label>
+          Tags
+        </label>
+        {{#each tags}}
+          <input
+            type="checkbox"
+            name="tags"
+            value="{{this.key}}"
+            class="form-check-inline ml-3"
+          />
+          {{this.label}}
+        {{/each}}
+      </div>
+      <div>
+        <label>
+          Blk numbers
+        </label>
+        <select class="form-control" name="block">
+          {{#each blockNumbers}}
+            <option value="{{this.key}}">
+              {{this.label}}
+            </option>
+          {{/each}}
+        </select>
+      </div>
+      <input type="submit" class="btn btn-primary mt-3" />
+    </form>
+  {{/block}}
+{{/extends}}

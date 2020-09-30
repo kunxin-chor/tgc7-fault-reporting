@@ -1,0 +1,9 @@
+{{#extends 'base'}}
+    {{#block 'content'}}
+        <ul>
+            {{#each allFaults}}
+            <li>{{this.title}} at {{this.location}}</li>
+            {{/each}}
+        </ul>
+    {{/block}}
+{{/extends}}
